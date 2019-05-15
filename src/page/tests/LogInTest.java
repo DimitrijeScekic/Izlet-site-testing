@@ -24,10 +24,26 @@ public class LogInTest {
 		String lastName = sc.nextLine();
 		System.out.println("Enter user name:");
 		String userName = sc.nextLine();
-		System.out.println("Enter email:");
-		String email = sc.nextLine();
-		System.out.println("Enter password:");
-		String password = sc.nextLine();
+		String emailaddress;
+		boolean b = false;
+		do {
+			System.out.println("Enter email address ex:xyz@gmail.com");
+			emailaddress = sc.nextLine();
+			String email_regex = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+					+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+			b = emailaddress.matches(email_regex);
+		} while (!b);
+
+		String password;
+		boolean bp = false;
+		do {
+			System.out.println(
+					"Enter password which must contains 6 to 20 characters string with at least one digit, one upper case letter, one lower case letter and one special symbol (“@#$%?!”)");
+			password = sc.nextLine();
+
+			String password_regex = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%?!]).{6,20})";
+			bp = password.matches(password_regex);
+		} while (!bp);
 
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -41,7 +57,7 @@ public class LogInTest {
 		// Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, userName);
 		// Thread.sleep(1000);
-		RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, email);
+		RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, emailaddress);
 		// Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, password);
 		// Thread.sleep(1000);
