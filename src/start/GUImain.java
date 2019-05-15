@@ -1,6 +1,5 @@
 package start;
 
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -16,7 +15,6 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
-import javax.swing.border.LineBorder;
 
 import page.tests.DashboardPageTest;
 import page.tests.LogInTest;
@@ -50,7 +48,7 @@ public class GUImain extends JFrame {
 	 */
 	public GUImain() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 300);
+		setBounds(100, 100, 900, 360);
 		getContentPane().setLayout(null);
 
 		txtLoginTest = new JTextField();
@@ -234,7 +232,7 @@ public class GUImain extends JFrame {
 		desktopPane.setBounds(367, 350, -250, -69);
 		getContentPane().add(desktopPane);
 
-		JLabel lblNewLabel = new JLabel("I Z L E T");
+		JLabel lblNewLabel = new JLabel("I  Z  L  E  T");
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 		//lblNewLabel.setBorder(new LineBorder(Color.DARK_GRAY, 1, true));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
