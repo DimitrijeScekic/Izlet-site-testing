@@ -234,11 +234,11 @@ public class GUImain extends JFrame {
 		desktopPane.setBounds(367, 350, -250, -69);
 		getContentPane().add(desktopPane);
 
-		JLabel lblNewLabel = new JLabel("IZLET testing");
+		JLabel lblNewLabel = new JLabel("I Z L E T");
 		lblNewLabel.setHorizontalTextPosition(SwingConstants.CENTER);
-		lblNewLabel.setBorder(new LineBorder(Color.DARK_GRAY, 1, true));
+		//lblNewLabel.setBorder(new LineBorder(Color.DARK_GRAY, 1, true));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 30));
 		lblNewLabel.setBounds(143, 54, 578, 50);
 		getContentPane().add(lblNewLabel);
 
