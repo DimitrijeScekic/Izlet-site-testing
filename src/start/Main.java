@@ -6,13 +6,19 @@ import page.tests.DashboardPageTest;
 import page.tests.LogInTest;
 import page.tests.RegistrationTest;
 
+
+
+
 public class Main {
-
+	
 	public static void main(String[] args) throws Exception {
-
+		
+	
 		while (true) {
 			Scanner sc = new Scanner(System.in);
 			System.out.println(" \n                                     Web-site IZLET Testing: \n ");
+			
+			
 			System.out.println(
 					" Type number for desired test:\n 1. Log In Test \n 2. Registration Test \n 3. Make New Post Test \n 4. Edit Last Post Test Test \n 5. Delete Two Last Post  ");
 

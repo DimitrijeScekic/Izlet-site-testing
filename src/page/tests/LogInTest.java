@@ -150,7 +150,6 @@ public class LogInTest {
 		driver.close();
 	}
 
-	
 	public static void logInExcel() throws Exception {
 
 		WebDriver driver = new ChromeDriver();

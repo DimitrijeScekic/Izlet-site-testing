@@ -2,10 +2,10 @@ package utility;
 
 public class Config {
 	
-	     public static final String URL_HOME="http://localhost/izlet/";
-	  //  public static final String URL_HOME="https://izlet.000webhostapp.com/izlet/index.php";
+	   public static final String URL_HOME="http://localhost/izlet/";
+	  // public static final String URL_HOME="https://izlet.000webhostapp.com/izlet/index.php";
 	    public static final String URL_DASHBOARD="http://localhost/izlet/dashboard.php";
-	  //  public static final String URL_DASHBOARD=" https://izlet.000webhostapp.com/izlet/dashboard.php";
+	   // public static final String URL_DASHBOARD=" https://izlet.000webhostapp.com/izlet/dashboard.php";
 		public static final String SHEET_NAME = "Registracija";
 		public static final String SHEET_NAME2 = "Tekst";
 		public static final String Path_TestData = "C:\\Users\\Dimitrije\\eclipse-workspace\\finalProject\\src\\testData\\";

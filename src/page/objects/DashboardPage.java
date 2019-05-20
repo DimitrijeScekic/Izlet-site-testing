@@ -112,6 +112,7 @@ public class DashboardPage {
 	}
 	
 	public static final By MAKE_A_POST_BUTTON = By.xpath("//a[contains(text(),'Make a post')]");
+	//public static final By MAKE_A_POST_BUTTON = By.id("newPostBtn");
 	public static final By LOGOUT_BUTTON = By.xpath("//a[@id='logoutBtn']");
 	public static final By POST_NAME = By.xpath("//input[@placeholder='Naziv']");
 	public static final By TRAVEL_LOCATION = By.xpath("//input[@placeholder='Lokacija']");
