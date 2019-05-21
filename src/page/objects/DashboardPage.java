@@ -9,9 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+public class DashboardPage {
 
-public class DashboardPage {	
-	
 	public static WebElement getElement(WebDriver driver, By element) {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		WebElement wb = wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -48,6 +47,15 @@ public class DashboardPage {
 
 	public static void clickLogoutButton(WebDriver driver) {
 		getLogoutButton(driver).click();
+	}
+
+	public static WebElement getLogoutButton2(WebDriver driver) {
+		WebElement element = driver.findElement(LOGOUT_BUTTON2);
+		return element;
+	}
+
+	public static void clickLogoutButton2(WebDriver driver) {
+		getLogoutButton2(driver).click();
 	}
 
 	public static WebElement getBrowseButton(WebDriver driver) {
@@ -89,13 +97,13 @@ public class DashboardPage {
 		List<WebElement> edit = driver.findElements(EDIT_POST_BUTTON);
 		edit.get(0).click();
 	}
-	
+
 	public static void editPostDescription(WebDriver driver, String value) {
 		WebElement element = driver.findElement(TRAVEL_DESCRIPTION_CHANGE);
-			element.clear();
-			element.sendKeys(value);
+		element.clear();
+		element.sendKeys(value);
 	}
-	
+
 	public static WebElement getPostChangeSave(WebDriver driver) {
 		WebElement element = driver.findElement(POST_CHANGE_SAVE);
 		return element;
@@ -104,16 +112,17 @@ public class DashboardPage {
 	public static void clickPostChangeSave(WebDriver driver) {
 		getPostChangeSave(driver).click();
 	}
-	
+
 	public static void deletePostButton(WebDriver driver) {
 		postMenuButton(driver);
 		List<WebElement> delete = driver.findElements(DELETE_POST_BUTTON);
 		delete.get(0).click();
 	}
-	
+
 	public static final By MAKE_A_POST_BUTTON = By.xpath("//a[contains(text(),'Make a post')]");
-	//public static final By MAKE_A_POST_BUTTON = By.id("newPostBtn");
+	// public static final By MAKE_A_POST_BUTTON = By.id("newPostBtn");
 	public static final By LOGOUT_BUTTON = By.xpath("//a[@id='logoutBtn']");
+	public static final By LOGOUT_BUTTON2 = By.xpath("//*[@id=\'logoutBtn\']");
 	public static final By POST_NAME = By.xpath("//input[@placeholder='Naziv']");
 	public static final By TRAVEL_LOCATION = By.xpath("//input[@placeholder='Lokacija']");
 	public static final By BROWSE_BUTTON = By.xpath("//label[@class='custom-file-upload']");

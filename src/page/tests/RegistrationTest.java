@@ -15,7 +15,6 @@ import utility.ExcelUtils;
 
 public class RegistrationTest {
 
-
 	public static void registration() throws Exception {
 
 		ExcelUtils.setExcelFile(Config.Path_TestData + Config.File_TestData, Config.SHEET_NAME);
@@ -55,21 +54,16 @@ public class RegistrationTest {
 		RegLogPage.openPage(driver, Config.URL_HOME);
 
 		RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, firstName);
-		//Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, lastName);
-		//Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, userName);
-		//Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, emailaddress);
-		//Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, password);
-		//Thread.sleep(1000);
 		RegLogPage.clickRegister(driver);
-		//Thread.sleep(3000);
+
 		sc.close();
 		driver.close();
 	}
-	
+
 	public static void registrationGUI() throws Exception {
 
 		ExcelUtils.setExcelFile(Config.Path_TestData + Config.File_TestData, Config.SHEET_NAME);
@@ -81,7 +75,7 @@ public class RegistrationTest {
 				JOptionPane.INPUT_VALUE_PROPERTY);
 		String userName = (String) JOptionPane.showInputDialog(frame, "Enter user name:",
 				JOptionPane.INPUT_VALUE_PROPERTY);
-		
+
 		String emailaddress;
 		boolean b = false;
 		do {
@@ -111,15 +105,11 @@ public class RegistrationTest {
 		RegLogPage.openPage(driver, Config.URL_HOME);
 
 		RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, firstName);
-		//Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, lastName);
-		//Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, userName);
-		//Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, emailaddress);
-		//Thread.sleep(1000);
 		RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, password);
-		//Thread.sleep(1000);
+
 		RegLogPage.clickRegister(driver);
 		Thread.sleep(1000);
 		driver.close();
@@ -139,19 +129,15 @@ public class RegistrationTest {
 
 		data = ExcelUtils.getCellData(1, 0);
 		RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, data);
-		//Thread.sleep(1000);
 		data = ExcelUtils.getCellData(1, 1);
 		RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, data);
-		//Thread.sleep(1000);
 		data = ExcelUtils.getCellData(1, 2);
 		RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, data);
-		//Thread.sleep(1000);
 		data = ExcelUtils.getCellData(1, 3);
 		RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, data);
-		//Thread.sleep(1000);
 		data = ExcelUtils.getCellData(1, 4);
 		RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, data);
-		//Thread.sleep(1000);
+
 		RegLogPage.clickRegister(driver);
 
 	}
@@ -170,24 +156,18 @@ public class RegistrationTest {
 
 		String fields[][] = new String[rowcount + 1][5];
 
-		for (int j = 1; j <= rowcount; j++) { 
+		for (int j = 1; j <= rowcount; j++) {
 
-			for (int i = 0; i < 5; i++) { 
+			for (int i = 0; i < 5; i++) {
 
 				fields[j][i] = ExcelUtils.getCellData(j, i);
 			}
 			RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, fields[j][0]);
-			//Thread.sleep(1000);
 			RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, fields[j][1]);
-			//Thread.sleep(1000);
 			RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, fields[j][2]);
-			//Thread.sleep(1000);
 			RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, fields[j][3]);
-			//Thread.sleep(1000);
 			RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, fields[j][4]);
-			//Thread.sleep(1000);
 			RegLogPage.clickRegister(driver);
-			//Thread.sleep(3000);
 		}
 		driver.close();
 	}

@@ -6,19 +6,14 @@ import page.tests.DashboardPageTest;
 import page.tests.LogInTest;
 import page.tests.RegistrationTest;
 
-
-
-
 public class Main {
-	
+
 	public static void main(String[] args) throws Exception {
-		
-	
+
 		while (true) {
 			Scanner sc = new Scanner(System.in);
 			System.out.println(" \n                                     Web-site IZLET Testing: \n ");
-			
-			
+
 			System.out.println(
 					" Type number for desired test:\n 1. Log In Test \n 2. Registration Test \n 3. Make New Post Test \n 4. Edit Last Post Test Test \n 5. Delete Two Last Post  ");
 
@@ -30,9 +25,9 @@ public class Main {
 				while (true) {
 					System.out.println("Type number for desired kind of test:\n 1. MANUAL \n 2. AUTOMATIC ");
 					int option = sc.nextInt();
-					if (option==1) {
+					if (option == 1) {
 						LogInTest.logIn();
-					} else if (option==2) {
+					} else if (option == 2) {
 						LogInTest.logInExcel();
 					} else {
 						System.out.println("Invalid input");
@@ -46,9 +41,9 @@ public class Main {
 				while (true) {
 					System.out.println("Type number for desired kind of test:\n 1. MANUAL \n 2. AUTOMATIC ");
 					int option2 = sc.nextInt();
-					if (option2==1) {
+					if (option2 == 1) {
 						RegistrationTest.registration();
-					} else if (option2==2) {
+					} else if (option2 == 2) {
 						RegistrationTest.registrationExcelAll();
 					} else {
 						System.out.println("Invalid input");
@@ -57,14 +52,14 @@ public class Main {
 					break;
 				}
 				break;
-				
+
 			case 3:
 				while (true) {
 					System.out.println("Type number for desired kind of test:\n 1. MANUAL \n 2. AUTOMATIC ");
 					int option3 = sc.nextInt();
-					if (option3==1) {
+					if (option3 == 1) {
 						DashboardPageTest.makeNewPost();
-					} else if (option3==2) {
+					} else if (option3 == 2) {
 						DashboardPageTest.makeNewPostExcel();
 						DashboardPageTest.makeNewPostExcel();
 					} else {
@@ -74,7 +69,7 @@ public class Main {
 					break;
 				}
 				break;
-				
+
 			case 4:
 
 				DashboardPageTest.editLastPost();
