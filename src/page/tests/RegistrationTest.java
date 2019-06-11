@@ -19,6 +19,7 @@ public class RegistrationTest {
 
 		ExcelUtils.setExcelFile(Config.Path_TestData + Config.File_TestData, Config.SHEET_NAME);
 		Scanner sc = new Scanner(System.in);
+
 		System.out.println("Enter name:");
 		String firstName = sc.nextLine();
 		System.out.println("Enter last name:");
@@ -51,16 +52,18 @@ public class RegistrationTest {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		RegLogPage.openPage(driver, Config.URL_HOME);
+			RegLogPage.openPage(driver, Config.URL_HOME);
 
-		RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, firstName);
-		RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, lastName);
-		RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, userName);
-		RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, emailaddress);
-		RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, password);
-		RegLogPage.clickRegister(driver);
+			RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, firstName);
+			// Thread.sleep(3000);
+			RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, lastName);
+			RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, userName);
+			RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, emailaddress);
+			RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, password);
+			RegLogPage.clickRegister(driver);
 
-		sc.close();
+			sc.close();
+
 		driver.close();
 	}
 
@@ -102,44 +105,76 @@ public class RegistrationTest {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		RegLogPage.openPage(driver, Config.URL_HOME);
+			RegLogPage.openPage(driver, Config.URL_HOME);
 
-		RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, firstName);
-		RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, lastName);
-		RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, userName);
-		RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, emailaddress);
-		RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, password);
+			RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, firstName);
+			RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, lastName);
+			RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, userName);
+			RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, emailaddress);
+			RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, password);
 
-		RegLogPage.clickRegister(driver);
-		Thread.sleep(1000);
-		driver.close();
+			RegLogPage.clickRegister(driver);
+			Thread.sleep(1000);
+			driver.close();
 	}
 
 	public static void registrationExcel() throws Exception {
+
+		Scanner sc = new Scanner(System.in);
 
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-		RegLogPage.openPage(driver, Config.URL_HOME);
 
-		String data;
+			RegLogPage.openPage(driver, Config.URL_HOME);
 
-		ExcelUtils.setExcelFile(Config.Path_TestData + Config.File_TestData, Config.SHEET_NAME);
+			String data;
 
-		data = ExcelUtils.getCellData(1, 0);
-		RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, data);
-		data = ExcelUtils.getCellData(1, 1);
-		RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, data);
-		data = ExcelUtils.getCellData(1, 2);
-		RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, data);
-		data = ExcelUtils.getCellData(1, 3);
-		RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, data);
-		data = ExcelUtils.getCellData(1, 4);
-		RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, data);
+			ExcelUtils.setExcelFile(Config.Path_TestData + Config.File_TestData, Config.SHEET_NAME);
 
-		RegLogPage.clickRegister(driver);
+			data = ExcelUtils.getCellData(1, 0);
+			RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, data);
+			data = ExcelUtils.getCellData(1, 1);
+			RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, data);
+			data = ExcelUtils.getCellData(1, 2);
+			RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, data);
+			data = ExcelUtils.getCellData(1, 3);
+			RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, data);
+			data = ExcelUtils.getCellData(1, 4);
+			RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, data);
 
+			RegLogPage.clickRegister(driver);
+			sc.close();
+		driver.close();
+	}
+
+	public static void registrationExcelGUI() throws Exception {
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+			RegLogPage.openPage(driver, Config.URL_HOME);
+
+			String data;
+
+			ExcelUtils.setExcelFile(Config.Path_TestData + Config.File_TestData, Config.SHEET_NAME);
+
+			data = ExcelUtils.getCellData(1, 0);
+			RegLogPage.sendKeys(driver, RegLogPage.FIRST_NAME_REG, data);
+			data = ExcelUtils.getCellData(1, 1);
+			RegLogPage.sendKeys(driver, RegLogPage.LAST_NAME_REG, data);
+			data = ExcelUtils.getCellData(1, 2);
+			RegLogPage.sendKeys(driver, RegLogPage.USER_NAME_REG, data);
+			data = ExcelUtils.getCellData(1, 3);
+			RegLogPage.sendKeys(driver, RegLogPage.EMAIL_REG, data);
+			data = ExcelUtils.getCellData(1, 4);
+			RegLogPage.sendKeys(driver, RegLogPage.PASSWORD_REG, data);
+
+			RegLogPage.clickRegister(driver);
+
+		driver.close();
 	}
 
 	public static void registrationExcelAll() throws Exception {

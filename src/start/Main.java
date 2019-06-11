@@ -17,17 +17,17 @@ public class Main {
 			System.out.println(
 					" Type number for desired test:\n 1. Log In Test \n 2. Registration Test \n 3. Make New Post Test \n 4. Edit Last Post Test Test \n 5. Delete Two Last Post  ");
 
-			int test = sc.nextInt();
+			String test = sc.nextLine();
 
 			switch (test) {
 
-			case 1:
+			case "1":
 				while (true) {
 					System.out.println("Type number for desired kind of test:\n 1. MANUAL \n 2. AUTOMATIC ");
-					int option = sc.nextInt();
-					if (option == 1) {
+					String option = sc.nextLine();
+					if (option.matches("1")) {
 						LogInTest.logIn();
-					} else if (option == 2) {
+					} else if (option.matches("2")) {
 						LogInTest.logInExcel();
 					} else {
 						System.out.println("Invalid input");
@@ -37,14 +37,14 @@ public class Main {
 				}
 				break;
 
-			case 2:
+			case "2":
 				while (true) {
 					System.out.println("Type number for desired kind of test:\n 1. MANUAL \n 2. AUTOMATIC ");
-					int option2 = sc.nextInt();
-					if (option2 == 1) {
+					String option2 = sc.nextLine();
+					if (option2.matches("1")) {
 						RegistrationTest.registration();
-					} else if (option2 == 2) {
-						RegistrationTest.registrationExcelAll();
+					} else if (option2.matches("2")) {
+						RegistrationTest.registrationExcel();
 					} else {
 						System.out.println("Invalid input");
 						continue;
@@ -53,14 +53,13 @@ public class Main {
 				}
 				break;
 
-			case 3:
+			case "3":
 				while (true) {
 					System.out.println("Type number for desired kind of test:\n 1. MANUAL \n 2. AUTOMATIC ");
-					int option3 = sc.nextInt();
-					if (option3 == 1) {
+					String option3 = sc.nextLine();
+					if (option3.matches("1")) {
 						DashboardPageTest.makeNewPost();
-					} else if (option3 == 2) {
-						DashboardPageTest.makeNewPostExcel();
+					} else if (option3.matches("2")) {
 						DashboardPageTest.makeNewPostExcel();
 					} else {
 						System.out.println("Invalid input");
@@ -70,13 +69,13 @@ public class Main {
 				}
 				break;
 
-			case 4:
+			case "4":
 
 				DashboardPageTest.editLastPost();
 
 				break;
 
-			case 5:
+			case "5":
 
 				DashboardPageTest.deleteTwoLastPost();
 

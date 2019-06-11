@@ -19,7 +19,6 @@ public class DashboardPage {
 
 	public static void sendKeys(WebDriver driver, By element, String value) {
 		getElement(driver, element).sendKeys(value);
-		;
 	}
 
 	public static WebElement getMakePost(WebDriver driver) {
@@ -35,9 +34,9 @@ public class DashboardPage {
 		WebElement element = driver.findElement(POST_BUTTON);
 		return element;
 	}
-
 	public static void clickSavePostButton(WebDriver driver) {
 		getSavePostButton(driver).click();
+		getSavePostButton(driver).submit();
 	}
 
 	public static WebElement getLogoutButton(WebDriver driver) {
@@ -49,13 +48,13 @@ public class DashboardPage {
 		getLogoutButton(driver).click();
 	}
 
-	public static WebElement getLogoutButton2(WebDriver driver) {
-		WebElement element = driver.findElement(LOGOUT_BUTTON2);
+	public static WebElement getNaziv(WebDriver driver) {
+		WebElement element = driver.findElement(POST_NAME);
 		return element;
 	}
 
-	public static void clickLogoutButton2(WebDriver driver) {
-		getLogoutButton2(driver).click();
+	public static void clickNaziv(WebDriver driver) {
+		getNaziv(driver).click();		
 	}
 
 	public static WebElement getBrowseButton(WebDriver driver) {
@@ -63,10 +62,12 @@ public class DashboardPage {
 		return element;
 	}
 
-	public static void insertFiles(WebDriver driver, String input) {
+	public static void insertImage(WebDriver driver, String input) {
 		driver.findElement(By.id("image")).sendKeys(input);
 	}
 
+	
+	
 	public static WebElement getTravelType(WebDriver driver) {
 		WebElement element = driver.findElement(TRAVEL_TYPE);
 		return element;
@@ -78,8 +79,8 @@ public class DashboardPage {
 	}
 
 	public static void setTravelType(WebDriver driver, String input) {
-		Select travelType = new Select(driver.findElement(TRAVEL_TYPE));
-		travelType.selectByVisibleText(input);
+		Select tType = new Select(driver.findElement(TRAVEL_TYPE));
+		tType.selectByVisibleText(input);
 	}
 
 	public static WebElement getMenuPostButton(WebDriver driver) {
@@ -103,6 +104,10 @@ public class DashboardPage {
 		element.clear();
 		element.sendKeys(value);
 	}
+	public static void clickPostDescription(WebDriver driver) {
+		WebElement element = driver.findElement(TRAVEL_DESCRIPTION_CHANGE);
+		element.click();
+	}
 
 	public static WebElement getPostChangeSave(WebDriver driver) {
 		WebElement element = driver.findElement(POST_CHANGE_SAVE);
@@ -119,20 +124,17 @@ public class DashboardPage {
 		delete.get(0).click();
 	}
 
-	public static final By MAKE_A_POST_BUTTON = By.xpath("//a[contains(text(),'Make a post')]");
-	// public static final By MAKE_A_POST_BUTTON = By.id("newPostBtn");
-	public static final By LOGOUT_BUTTON = By.xpath("//a[@id='logoutBtn']");
-	public static final By LOGOUT_BUTTON2 = By.xpath("//*[@id=\'logoutBtn\']");
-	public static final By POST_NAME = By.xpath("//input[@placeholder='Naziv']");
-	public static final By TRAVEL_LOCATION = By.xpath("//input[@placeholder='Lokacija']");
-	public static final By BROWSE_BUTTON = By.xpath("//label[@class='custom-file-upload']");
-	public static final By TRAVEL_TYPE = By.xpath("//select[@name='transport']");
+	public static final By MAKE_A_POST_BUTTON = By.id("newPostBtn");
+	public static final By LOGOUT_BUTTON = By.id("logoutBtn");
+    public static final By POST_NAME = By.name("title");
+	public static final By TRAVEL_LOCATION = By.name("location");
+	public static final By BROWSE_BUTTON = By.id("image");
+	public static final By TRAVEL_TYPE = By.name("transport");
 	public static final By TRAVEL_DESCRIPTION = By.xpath("//textarea[@placeholder='Opis']");
-	public static final By POST_BUTTON = By.xpath("//input[@value='Post']");
+	public static final By POST_BUTTON =  By.name("postSubmit");
 	public static final By MENU_POST_BUTTON = By.className("fa-ellipsis-v");
 	public static final By DELETE_POST_BUTTON = By.className("fa-trash-alt");
 	public static final By EDIT_POST_BUTTON = By.className("fa-edit");
-	public static final By TRAVEL_DESCRIPTION_CHANGE = By.xpath("//textarea[@id='description']");
-	public static final By POST_CHANGE_SAVE = By.xpath("//div[@class='popupEdit']//input[@value='Post']");
-
+	public static final By TRAVEL_DESCRIPTION_CHANGE = By.id("description");
+	public static final By POST_CHANGE_SAVE = By.xpath("//div[@class='popupEdit']//input[@name='postSubmit']");
 }

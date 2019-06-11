@@ -115,7 +115,11 @@ public class GUImain extends JFrame {
 		btnAutomatic.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				LogInTest.logInExcelAll();
+				try {
+					LogInTest.logInExcel();
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		});
 		btnAutomatic.setFont(new Font("Dialog", Font.PLAIN, 10));
@@ -146,7 +150,7 @@ public class GUImain extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				try {
-					RegistrationTest.registrationExcelAll();
+					RegistrationTest.registrationExcelGUI();
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
@@ -164,7 +168,6 @@ public class GUImain extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				try {
 					DashboardPageTest.makeNewPostGUI();
-					DashboardPageTest.makeNewPostGUI();
 				} catch (InterruptedException e1) {
 					e1.printStackTrace();
 				}
@@ -181,8 +184,7 @@ public class GUImain extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				try {
-					DashboardPageTest.makeNewPostExcel();
-					DashboardPageTest.makeNewPostExcel();
+					DashboardPageTest.makeNewPostExcelGUI();
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
@@ -200,7 +202,7 @@ public class GUImain extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				try {
-					DashboardPageTest.deleteTwoLastPost();
+					DashboardPageTest.deleteTwoLastPostGUI();
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
